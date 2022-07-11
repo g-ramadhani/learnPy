@@ -7,8 +7,10 @@ blacklist = ["ben", "loki", "lou"]
 #Menu
 menu = ["Black Coffee","Espresso","Latte","Tea"]
 price = ["$5","$10","$15","$20"]
+
 menu_list = "1. " + menu[0] + " = " + price[0] + "\n" + "2. " + menu[1] + " = " + price[1] + "\n" + "3. " + menu[2] + " = " + price[2] + "\n" + "4. " + menu[3] + " = " + price[3]
 
+print("=====SG COFFEE=====")
 #Asking Name for order
 name = input("What Is Your Name ? \n")
 
@@ -26,6 +28,7 @@ if name.lower() == blacklist[0] or name.lower() == blacklist[1] or name.lower() 
     else :
         print("Oh, so you're one of those good " + name + "s. Come on in")
 
+print("===================")
 #Member not in blacklisted
 print("\nHello " + name +", welcome to SG Coffee, Here is what we serving:")
 
@@ -58,7 +61,7 @@ total = price * int(quantity)
 print("Sounds Good " + name + " , we'll have your "+ quantity + " " + pilih + " ready for you in a moment, all about " +str(total)+ " dollars\n")
 
 #Bonus Foods and drink
-if total <= 500 :
+if total < 500 :
    print("Congrats " + name + " you got Bonus one free Snack, thanks for coming today")
    exit()
 else :
