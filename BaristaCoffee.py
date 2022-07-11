@@ -6,9 +6,7 @@ blacklist = ["ben", "loki", "lou"]
 
 #Menu
 menu = ["Black Coffee","Espresso","Latte","Tea"]
-price = ["$5","$10","$15","$20"]
-
-menu_list = "1. " + menu[0] + " = " + price[0] + "\n" + "2. " + menu[1] + " = " + price[1] + "\n" + "3. " + menu[2] + " = " + price[2] + "\n" + "4. " + menu[3] + " = " + price[3]
+price = [5,10,15,20]
 
 print("=====SG COFFEE=====")
 #Asking Name for order
@@ -32,25 +30,31 @@ print("===================")
 #Member not in blacklisted
 print("\nHello " + name +", welcome to SG Coffee, Here is what we serving:")
 
+#display menu from list
+num = 1
+for i, j in zip(menu,price) :
+    print(str(num)+". "+i+" = "+"$"+str(j))
+    num += 1
+
 #Order Menu
-order = int(input(menu_list + "\nYour Choice 1-4: "))
+order = int(input("\nYour Choice 1-4: "))
 
 if order == 1 :
     pilih = menu[0]
-    price = 5
+    price = price[0]
 elif order == 2  :
      pilih = menu[1]
-     price = 10
+     price = price[1]
 elif order == 3 :
      pilih = menu[2]
-     price = 15
+     price = price[2]
 elif order == 4 :
      pilih = menu[3]
-     price = 20
+     price = price[3]
 else :
     print("Sorry, we don't have that here.")
     price = 0
-    exit()
+    quit()
 
 #Total Buying quantity
 quantity = input("how many " + pilih +" would you like ?\n")
